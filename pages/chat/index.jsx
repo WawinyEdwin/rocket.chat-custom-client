@@ -9,6 +9,7 @@ export default function RocketChat() {
   const [showChat, setShowchat] = useState(false);
   const [address, setAddress] = useState("user-test");
   const [userToken, setUserToken] = useState("");
+  const [typingMessage, setTypingMessage] = useState("");
 
   const roomId = "ZbAfyk5xKNjpHaB2fvBWqXHZX4pH4muoiM";
   const userId = "ZbAfyk5xKNjpHaB2f";
@@ -180,7 +181,7 @@ export default function RocketChat() {
         }
 
         if (resp.collection == "stream-notify-room") {
-          console.log(`${resp.fields.args[0]} is ${resp.fields.args[1]}`);
+          setTypingMessage(`${resp.fields.args[0]} is ${resp.fields.args[1]} ...`);
           return;
         }
       }
@@ -288,6 +289,8 @@ export default function RocketChat() {
             </div>
             <div className="col">
               <p className="text-center"> You are chatting with {address}</p>
+
+              {typingMessage ? <small>{typingMessage}</small> : ""}
               <div className="">
                 <form onSubmit={sendChats}>
                   <textarea

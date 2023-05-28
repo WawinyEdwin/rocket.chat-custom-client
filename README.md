@@ -60,7 +60,7 @@ npm run dev
 Head over to the url where the client is running at `http://localhost:3001` preferably or any other point as indicated from the logs.
 
 
-Play around with the custom client running, to see more magic open the developer tools, open the network tab, filter the request by `WS`- websockets and see the realtime data exchange.
+Play around with the custom client running, you can keep the rocket.chat client interface open to act as another user.. to see more magic open the developer tools, open the network tab, filter the request by `WS`- websockets and see the realtime data exchange.
 
 Happy Hacking :)
 
