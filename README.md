@@ -47,9 +47,9 @@ Replace the `address` variable in pages/chat/index.jsx with the username of this
 
 Using an API client such as Postman, Insomnia, etc. :
 
-- Login the noted user via this endpoint `http://localhost:3000//api/v1/login` more details [here](https://developer.rocket.chat/reference/api/rest-api/endpoints/other-important-endpoints/authentication-endpoints/login) to get their user id from the response with the field `userId`, copy its value and replace in variable field `userId` in pages/chat/index.jsx
+- Login the noted user via this endpoint `http://localhost:3000/api/v1/login` more details [here](https://developer.rocket.chat/reference/api/rest-api/endpoints/other-important-endpoints/authentication-endpoints/login) to get their user id from the response with the field `userId`, copy its value and replace in variable field `userId` in pages/chat/index.jsx
 
-- Use this endpoint to create an direct message chat between the two users `http://localhost:3000//api/v1/im.create` more details [here](https://developer.rocket.chat/reference/api/rest-api/endpoints/core-endpoints/im-endpoints/create) if success you will get a room id in the response with field `rid`, copy that and replace in variable field `roomId` in pages/chat/index.jsx 
+- Use this endpoint to create an direct message chat between the two users `http://localhost:3000/api/v1/im.create` more details [here](https://developer.rocket.chat/reference/api/rest-api/endpoints/core-endpoints/im-endpoints/create) if success you will get a room id in the response with field `rid`, copy that and replace in variable field `roomId` in pages/chat/index.jsx 
 
 
 Start the application by running
@@ -61,6 +61,8 @@ Head over to the url where the client is running at `http://localhost:3001` pref
 
 
 Play around with the custom client running, you can keep the rocket.chat client interface open to act as another user.. to see more magic open the developer tools, open the network tab, filter the request by `WS`- websockets and see the realtime data exchange.
+
+Find more endpoints and developer documentation [Rocket.Chat](https://developer.rocket.chat/)
 
 Happy Hacking :)
 
