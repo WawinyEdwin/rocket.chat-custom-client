@@ -1,0 +1,32 @@
+{
+  "name": "rc-custom-client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.15",
+    "axios": "^1.2.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "next": "12.3.1",
+    "notistack": "^2.0.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-use-websocket": "^4.3.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.25.0",
+    "eslint-config-next": "12.3.1"
+  }
+}
