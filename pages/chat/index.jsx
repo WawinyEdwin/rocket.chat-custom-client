@@ -128,27 +128,6 @@ export default function RocketChat() {
           })
         );
       }
-
-      if (userToken) {
-        sendMessage(
-          JSON.stringify({
-            msg: "sub",
-            id: uuidv4(),
-            name: "stream-livechat-room",
-            params: [
-              roomId,
-              {
-                useCollection: false,
-                args: [
-                  {
-                    token: userToken,
-                  },
-                ],
-              },
-            ],
-          })
-        );
-      }
     },
   });
 
@@ -162,8 +141,7 @@ export default function RocketChat() {
 
       if (resp.msg === "changed") {
         if (resp.collection == "stream-notify-logged") {
-          console.log(resp.fields.eventName);
-          console.log(resp.args);
+          console.log("User Online");
           return;
         }
 
@@ -181,7 +159,9 @@ export default function RocketChat() {
         }
 
         if (resp.collection == "stream-notify-room") {
-          setTypingMessage(`${resp.fields.args[0]} is ${resp.fields.args[1]} ...`);
+          setTypingMessage(
+            `${resp.fields.args[0]} is ${resp.fields.args[1]} ... `
+          );
           return;
         }
       }
@@ -206,19 +186,18 @@ export default function RocketChat() {
 
   const handleChat = () => {
     // get Messages
-    sendMessage(
-      JSON.stringify({
-        msg: "method",
-        method: "loadHistory",
-        id: uuidv4(),
-        params: [roomId, null, 50, { $date: 1480377601 }],
-      })
-    );
-
     if (history) {
-      console.log(history);
       setShowchat(true);
       return;
+    } else {
+      sendMessage(
+        JSON.stringify({
+          msg: "method",
+          method: "loadHistory",
+          id: uuidv4(),
+          params: [roomId, null, 50, { $date: 1480377601 }],
+        })
+      );
     }
   };
 
@@ -270,7 +249,7 @@ export default function RocketChat() {
     <div className="container">
       <div className="sidebar">
         <div className="alert alert-primary" onClick={handleChat}>
-          Click ME to chat: {address}
+          Click ME to chat with <b>{address}</b>
         </div>
       </div>
       <div className="content">

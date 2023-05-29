@@ -1,6 +1,6 @@
 # A Custom Rocket.Chat Client.
 This Client App leverage the use of Rocket.chat Realtime API(s) and Websocket to emulate a custom client communication with the Rocket.Chat Server.
-
+![The web client in action](https://i.postimg.cc/dtZPKbjP/Screenshot-from-2023-05-29-14-07-15.png)
 ## SetUp.
 - Server Setup
 
